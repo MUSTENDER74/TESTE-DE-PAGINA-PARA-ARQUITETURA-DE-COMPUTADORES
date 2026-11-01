@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tech</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-recycle"></i>
+                </div>
+                <div class="title-area">
+                    <h1>Eco Tech</h1>
+                    <p>Monitoramento em Tempo Real</p>
+                </div>
+            </div>
+            <div class="status-online">
+                <span class="ping"></span>
+                <span class="dot"></span>
+                <span>Online</span>
+            </div>
+        </header>
+
+        <!-- Abas -->
+        <nav class="tabs">
+            <button id="tab-dashboard" class="tab-btn active">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </button>
+            <button id="tab-logs" class="tab-btn">
+                <i class="fa-solid fa-terminal"></i> Terminal Logs
+            </button>
+        </nav>
+
+        <!-- DASHBOARD -->
+        <div id="view-dashboard" class="view-content active">
+            
+            <!-- Câmera Status -->
+            <section class="section-camera">
+                <div class="card-camera" id="card-camera">
+                    <div class="cam-info">
+                        <div class="cam-icon-bg" id="icon-bg-camera">
+                            <i class="fa-solid fa-camera" id="icon-camera"></i>
+                        </div>
+                        <div class="cam-text">
+                            <h3>Visão Computacional</h3>
+                            <p>Módulo de Câmera</p>
+                        </div>
+                    </div>
+                    <div class="cam-status-text">
+                        <p id="status-camera">AGUARDANDO</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compartimentos -->
+            <section class="section-bins">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-boxes-stacked"></i> Status</h2>
+                    <div class="actions">
+                        <button onclick="emptyAllBins()" class="btn-danger">
+                            <i class="fa-solid fa-trash-can"></i> Esvaziar Tudo
+                        </button>
+                        <span id="total-count" class="badge-total">Total: 0</span>
+                    </div>
+                </div>
+                
+                <div class="grid-bins" id="bins-container">
+                    <!-- Gerado pelo JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- TERMINAL -->
+        <div id="view-logs" class="view-content">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <div class="terminal-title">
+                    <i class="fa-brands fa-linux"></i> pi@ecotech: ~/logs
+                </div>
+            </div>
+            <div id="terminal-output" class="terminal-body">
+                <!-- Logs aparecerão aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
